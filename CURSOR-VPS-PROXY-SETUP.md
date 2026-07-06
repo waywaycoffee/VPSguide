@@ -45,11 +45,12 @@ vless://6f792d3a-18c1-4bef-84ec-cf3e0edd9a83@23.95.188.42:8443?encryption=none&s
 
 ## 二、需要拷贝到新电脑的文件
 
-从主电脑复制以下 3 个文件到新机同一文件夹（例如 `D:\vps-proxy\`）：
+从主电脑复制以下文件到新机同一文件夹（例如 `D:\vps-proxy\`），或直接 `git clone` 本仓库：
 
 | 文件 | 说明 |
 |------|------|
-| `CURSOR-VPS-PROXY-SETUP.md` | 本指引（给 Cursor 读） |
+| `VPS-SERVER-SETUP.md` | VPS 订购与服务器搭建（尚无节点时先看） |
+| `CURSOR-VPS-PROXY-SETUP.md` | 客户端配置指引（给 Cursor 读） |
 | `codex-vps-portable.yaml` | Clash 配置文件 |
 | `codex-vps-vless.txt` | 手机/通用 VLESS 链接 |
 
