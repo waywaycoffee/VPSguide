@@ -1,0 +1,54 @@
+# Portable Clash config for other devices - copy this file to any PC
+# Windows: Clash Verge Rev -> Profiles -> Import -> Use
+# macOS: Clash Verge Rev / ClashX Meta
+
+mode: global
+mixed-port: 7897
+allow-lan: false
+log-level: info
+ipv6: false
+unified-delay: true
+
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+
+tun:
+  enable: true
+  stack: mixed
+  auto-route: true
+  auto-detect-interface: true
+  strict-route: false
+  route-exclude-address:
+    - 23.95.188.42/32
+  dns-hijack:
+    - any:53
+
+proxies:
+  - name: codex-vps
+    type: vless
+    server: 23.95.188.42
+    port: 8443
+    uuid: 6f792d3a-18c1-4bef-84ec-cf3e0edd9a83
+    network: tcp
+    tls: true
+    udp: false
+    flow: xtls-rprx-vision
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: UoD8fWQqpyqNMRxbAgEk0SggmXpGi9HDAfvdIMWIaHI
+      short-id: e52c7016
+      spider-x: /
+
+proxy-groups:
+  - name: GLOBAL
+    type: select
+    proxies:
+      - codex-vps
+      - DIRECT
+
+rules:
+  - MATCH,GLOBAL
